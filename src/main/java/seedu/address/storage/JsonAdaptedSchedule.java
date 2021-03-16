@@ -76,11 +76,17 @@ public class JsonAdaptedSchedule {
             throw new IllegalValueException(
                     String.format(MISSING_FIELD_MESSAGE_FORMAT, DateTime.class.getSimpleName()));
         }
+        if (!DateTime.isValidDateTime(startDateTime)) {
+            throw new IllegalValueException(DateTime.MESSAGE_CONSTRAINTS);
+        }
         final DateTime modelStartDateTime = new DateTime(startDateTime);
 
         if (endDateTime == null) {
             throw new IllegalValueException(
                     String.format(MISSING_FIELD_MESSAGE_FORMAT, DateTime.class.getSimpleName()));
+        }
+        if (!DateTime.isValidDateTime(endDateTime)) {
+            throw new IllegalValueException(DateTime.MESSAGE_CONSTRAINTS);
         }
         final DateTime modelEndDateTime = new DateTime(endDateTime);
 

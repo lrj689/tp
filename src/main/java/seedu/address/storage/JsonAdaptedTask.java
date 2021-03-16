@@ -74,6 +74,9 @@ public class JsonAdaptedTask {
             throw new IllegalValueException(
                     String.format(MISSING_FIELD_MESSAGE_FORMAT, Date.class.getSimpleName()));
         }
+        if (!Date.isValidDate(taskDeadline)) {
+            throw new IllegalValueException(Date.MESSAGE_CONSTRAINTS);
+        }
         final Date modelTaskDeadline = new Date(taskDeadline);
 
         final Set<Tag> modelTags = new HashSet<>(taskTags);
