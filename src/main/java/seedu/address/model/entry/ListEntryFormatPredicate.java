@@ -24,7 +24,8 @@ public class ListEntryFormatPredicate implements Predicate<Entry> {
                     || startDate.isBefore(today) && endDate.isAfter(today);
         } else if (keyword.equals("week")) {
             return startDate.isAfter(yesterday) && startDate.isBefore(lastDay)
-                || endDate.isAfter(yesterday) && endDate.isBefore(lastDay);
+                || endDate.isAfter(yesterday) && endDate.isBefore(lastDay)
+                    || startDate.isBefore(yesterday) && endDate.isAfter(lastDay);
         } else {
             return true;
         }
