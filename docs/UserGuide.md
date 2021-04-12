@@ -198,7 +198,7 @@ Example(s):
 
 Below is an illustration of entering`cfind yeoh` on a sample Teaching Assistant:
 
-![Find contact illustration](images/FindContactExample.png)
+![Find contact example](images/FindContactExample.png)
 
 Scenario:
 Your student had booked a consultation with you and you want to find his/her contact details by name without scrolling 
@@ -382,6 +382,10 @@ Example(s):
 
 * `efilter meeting`
 * `efilter meeting needprep`
+
+Below is an example of entering `efliter` into a sample Teaching Assistant:
+
+![Filter tag example](images/FilterTagExample.png)
 
 Scenario: You want to filter your entries via the consultation tag you have added to your entries in the past, so that
 you can plan ahead and prepare for your upcoming consultations.
