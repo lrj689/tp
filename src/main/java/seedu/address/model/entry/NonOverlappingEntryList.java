@@ -8,9 +8,16 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import seedu.address.model.contact.Contact;
 import seedu.address.model.entry.exceptions.EntryNotFoundException;
 import seedu.address.model.entry.exceptions.OverlappingEntryException;
 
+/**
+ * A list of {@code Entry} that enforces that {@code Entry} does not have overlapping dates.
+ * As such, any adding or setting of {@code Entry} is checked with {@code NonOverlappingEntryList#overlapsWith(Entry)}
+ * Supports a minimal set of list operations.
+ * @see NonOverlappingEntryList#overlapsWith(Entry)
+ */
 public class NonOverlappingEntryList implements Iterable<Entry> {
 
     private final ObservableList<Entry> internalList = FXCollections.observableArrayList();

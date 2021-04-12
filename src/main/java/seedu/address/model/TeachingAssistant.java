@@ -145,17 +145,20 @@ public class TeachingAssistant implements ReadOnlyTeachingAssistant {
     }
 
     /**
-     * returns true if the give entry overlaps with existing entries in the list.
+     * Returns true if the give entry overlaps with existing entries in the list.
      */
     public boolean isOverlappingEntry(Entry entry) {
         requireNonNull(entry);
         return entries.overlapsWith(entry);
     }
 
+    /**
+     * Deletes all {@code Entry} from the entries list that are overdue.
+     * An {@code Entry} is considered overdue if its end date has passed.
+     */
     public void clearOverdueEntries() {
         entries.clearOverdueEntries();
     }
-    //// schedule methods
 
     //// util methods
 

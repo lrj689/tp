@@ -5,6 +5,10 @@ import java.util.Set;
 
 import seedu.address.model.tag.Tag;
 
+/**
+ * A temporary version of {@code Entry} with optional fields to be used in {@code EditEntryCommand}
+ * @see seedu.address.logic.commands.EditEntryCommand
+ */
 public class TemporaryEntry {
     private boolean isAnyFieldEdited;
     private Optional<EntryName> entryName;

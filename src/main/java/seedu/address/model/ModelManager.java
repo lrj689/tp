@@ -93,23 +93,37 @@ public class ModelManager implements Model {
 
     // ====== Contact ======
 
+    /**
+     * Returns true if the contact list already contains a {@code contact}.
+     */
     @Override
     public boolean hasContact(Contact contact) {
         requireNonNull(contact);
         return teachingAssistant.hasContact(contact);
     }
 
+    /**
+     * Deletes {@code target} from the list.
+     */
     @Override
     public void deleteContact(Contact target) {
         teachingAssistant.removeContact(target);
     }
 
+    /**
+     * Add {@code target} into the list.
+     */
     @Override
     public void addContact(Contact contact) {
         teachingAssistant.addContact(contact);
         updateFilteredContactList(PREDICATE_SHOW_ALL_CONTACTS);
     }
 
+    /**
+     * Replaces {@code target} with {@code editedContact}.
+     * @param target
+     * @param editedContact
+     */
     @Override
     public void setContact(Contact target, Contact editedContact) {
         requireAllNonNull(target, editedContact);
@@ -120,7 +134,7 @@ public class ModelManager implements Model {
     // ====== Entry ======
 
     /**
-     * checks if {@code entry} is in the list
+     * Checks if {@code entry} is in the list.
      */
     @Override
     public boolean hasEntry(Entry entry) {
@@ -128,7 +142,7 @@ public class ModelManager implements Model {
     }
 
     /**
-     * adds an {@code Entry} into the list
+     * Adds an {@code Entry} into the list.
      */
     @Override
     public void addEntry(Entry entry) {
@@ -137,7 +151,7 @@ public class ModelManager implements Model {
     }
 
     /**
-     * deletes an {@code Entry} from the list
+     * Deletes an {@code Entry} from the list.
      */
     @Override
     public void deleteEntry(Entry entry) {
@@ -145,7 +159,7 @@ public class ModelManager implements Model {
     }
 
     /**
-     * replaces {@code target} with {@code editedEntry}
+     * Replaces {@code target} with {@code editedEntry}.
      */
     @Override
     public void setEntry(Entry target, Entry editedEntry) {
@@ -153,6 +167,9 @@ public class ModelManager implements Model {
         teachingAssistant.setEntry(target, editedEntry);
     }
 
+    /**
+     * Returns true if the {@code toAdd} overlaps with another {@code Entry} the list.
+     */
     @Override
     public boolean isOverlappingEntry(Entry toAdd) {
         requireNonNull(toAdd);
@@ -175,6 +192,9 @@ public class ModelManager implements Model {
         return filteredContacts;
     }
 
+    /**
+     * Updates the {@code filteredContacts} with the provided {@code predicate}.
+     */
     @Override
     public void updateFilteredContactList(Predicate<Contact> predicate) {
         requireNonNull(predicate);
@@ -192,6 +212,9 @@ public class ModelManager implements Model {
         return filteredEntries;
     }
 
+    /**
+     * Updates the {@code filteredEntries} with the provided {@code predicate}.
+     */
     @Override
     public void updateFilteredEntryList(Predicate<Entry> predicate) {
         requireNonNull(predicate);

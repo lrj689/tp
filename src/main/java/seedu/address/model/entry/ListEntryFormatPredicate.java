@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.function.Predicate;
 
+/**
+ * Tests that a {@code Entry}'s start date or end date falls on today, or if the {@code Entry} is ongoing.
+ */
 public class ListEntryFormatPredicate implements Predicate<Entry> {
 
     private final String keyword;
