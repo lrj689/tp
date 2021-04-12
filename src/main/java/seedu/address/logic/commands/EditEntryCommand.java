@@ -31,7 +31,7 @@ public class EditEntryCommand extends Command {
     public static final String COMMAND_WORD = "eedit";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the entry identified "
-            + "by the entry index used in the displayed entry list. Index must be a positive integer."
+            + "by the entry index used in the displayed entry list. Index must be a positive integer. "
             + "Existing values will be overwritten by the input values.\n"
             + "Parameters: INDEX "
             + "[" + PREFIX_NAME + "NAME] "
